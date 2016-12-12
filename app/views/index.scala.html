@@ -1,1 +1,36 @@
-@()
+@(context:String)(content:Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>LUNATECH</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+
+    </head>
+    <body>
+
+
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+
+
+
+
+                <ul class="nav navbar-nav">
+                    <li class='@if(context=="query"){active}'><a href="@routes.MainController.query">Query</a></li>
+                    <li class='@if(context=="report"){active}'><a href="@routes.MainController.report">Report</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="container">
+            @content
+        </div>
+
+    </body>
+</html>
