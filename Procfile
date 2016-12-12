@@ -1,0 +1,1 @@
+web: target/universal/stage/bin/lunatech -Dhttp.port=${PORT}
