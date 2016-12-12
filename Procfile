@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/lunatech -Dhttp.port=${PORT}
+web: target/universal/stage/bin/lunatech -Dhttp.port=${PORT} -Dplay.crypto.secret="q;u9G6bOwg9GxE;ovf`XnSwI6JXI;MQizBErt=FTLcj/8E`tj6fgM_wah5r19Uw]"
