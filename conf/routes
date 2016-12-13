@@ -1,4 +1,5 @@
-GET     /                           controllers.MainController.index
-GET     /query                           controllers.MainController.query
-GET     /report                           controllers.MainController.report
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /                                         controllers.MainController.index
+GET     /query                                    controllers.MainController.query
+POST     /do/query                           controllers.MainController.doQuery
+GET     /report                                   controllers.MainController.report
+GET     /assets/*file                             controllers.Assets.versioned(path="/public", file: Asset)

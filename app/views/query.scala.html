@@ -1,6 +1,8 @@
-@index("query"){
+@(countries:List[Country])
 
-    <form>
+@main("query"){
+
+    <form action="@routes.MainController.doQuery" method="POST">
         <div class="form-group">
             <label for="country">Country </label>
             <input type="text" class="form-control" id="country" placeholder="Country or code">
@@ -8,6 +10,10 @@
 
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
+
+    @if(!countries.isEmpty){
+        Olá
+    }
 
 
 }

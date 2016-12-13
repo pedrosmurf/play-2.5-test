@@ -12,3 +12,4 @@ libraryDependencies += ws
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
 
 
+TwirlKeys.templateImports += "models._"
