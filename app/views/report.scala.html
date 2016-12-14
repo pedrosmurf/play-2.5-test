@@ -1,4 +1,69 @@
+@(report:Report)
+
 @main("report"){
 
 <h1>Report</h1>
+
+<h2>Countries with more airports</h2>
+<table class="table table-striped">
+    <thead>
+        <td>Country</td>
+        <td>Airport Count</td>
+    </thead>
+    <tbody>
+        @for((country,count) <- report.topCountries){
+            <tr>
+                <td>@country</td>
+                <td>@count</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Countries with fewer airports</h2>
+<table class="table table-striped">
+    <thead>
+    <td>Country</td>
+    <td>Airport Count</td>
+    </thead>
+    <tbody>
+    @for((country,count) <- report.lowerCountries){
+    <tr>
+        <td>@country</td>
+        <td>@count</td>
+    </tr>
+    }
+    </tbody>
+</table>
+
+<h2>Top runways identifiers</h2>
+<table class="table table-striped">
+    <thead>
+    <td>Identifier</td>
+    </thead>
+    <tbody>
+    @for(identifier <- report.topIdentifications){
+    <tr>
+        <td>@identifier</td>
+    </tr>
+    }
+    </tbody>
+</table>
+
+<h2>Runways types per country</h2>
+<table class="table table-striped">
+    <thead>
+    <td>Country</td>
+    <td>Types</td>
+    </thead>
+    <tbody>
+    @for((country,types) <- report.runwaysTypes){
+    <tr>
+        <td>@country</td>
+        <td>@types</td>
+    </tr>
+    }
+    </tbody>
+</table>
+
 }

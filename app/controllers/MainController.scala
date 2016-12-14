@@ -25,7 +25,7 @@ class MainController @Inject()(data: DataLoader) extends Controller {
   }
 
   def report = Action {
-    Ok(views.html.report())
+    Ok(views.html.report(data.report))
   }
 
 }
