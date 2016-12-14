@@ -4,18 +4,18 @@ import javax.inject._
 import play.api._
 import play.api.mvc._
 import models.Country
-import services.DataLoader
+import services.{ReportService,QueryService}
 
 
 @Singleton
-class MainController @Inject()(data: DataLoader) extends Controller {
+class MainController @Inject()(queryService: QueryService,reportService:ReportService) extends Controller {
 
   def index = Action {
     Redirect(routes.MainController.query(""))
   }
 
   def query(country:String) = Action {
-    val countries: List[Country] = data.findCountries(country)
+    val countries: List[Country] = queryService.findCountries(country)
     Ok(views.html.query(countries))
   }
 
@@ -25,7 +25,7 @@ class MainController @Inject()(data: DataLoader) extends Controller {
   }
 
   def report = Action {
-    Ok(views.html.report(data.report))
+    Ok(views.html.report(reportService.report))
   }
 
 }
