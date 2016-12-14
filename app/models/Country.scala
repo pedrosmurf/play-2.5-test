@@ -11,7 +11,7 @@ object Country {
       parts(3),
       parts(4),
       parts(5),
-      Nil
+      airports
     )
   }
 

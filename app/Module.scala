@@ -1,5 +1,5 @@
 import com.google.inject.AbstractModule
-import models.{DataLoader,DataLoaderClass}
+import services.{DataLoader,DataLoaderClass}
 
 class Module extends AbstractModule {
 
